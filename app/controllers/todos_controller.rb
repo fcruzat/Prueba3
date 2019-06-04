@@ -21,6 +21,10 @@ class TodosController < ApplicationController
     
     end
 
+    def edit
+    
+    end
+
     private
 
     def todo_params    
@@ -30,5 +34,5 @@ class TodosController < ApplicationController
     def find_todo
         @todo = Todo.find(params[:id])
     end
-    
+
 end
