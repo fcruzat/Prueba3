@@ -5,11 +5,12 @@
     <div class= 'text-center card card-body bg-light'>
         <%=todo.description%>
         <br>
-        <% if todo.completed == true %>
-        <p>Task Completed</p>
-        <% elsif todo.completed == false %>
-        <p>Task NOT completed yet</p>
+        <% if todo.completed == true%>
+            <p class="card-text"><%= link_to "Mark as NOT Completed", complete_todo_path(todo), method: 'POST', class: "btn btn-danger" %></p>
+        <% elsif todo.completed == false%>
+            <p class="card-text"><%= link_to "Mark as Completed", complete_todo_path(todo), method: 'POST', class: "btn btn-success" %></p>
         <%end%>
+        
         <%= link_to 'Show', todo %>
         <%= link_to 'Edit', edit_todo_path(todo) %>
         <%= link_to "Delete", todo, method: :delete, data: {confirm: 'Are you sure?'} %>

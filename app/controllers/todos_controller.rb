@@ -34,6 +34,16 @@ class TodosController < ApplicationController
         @todo.destroy
         redirect_to todos_path
     end
+
+    def complete
+        if @todo.completed == false
+        @todo.completed = true
+        elsif @todo.completed == true
+        @todo.completed = false
+        end
+        @todo.save
+        redirect_to todos_path
+    end
     
     private
 
