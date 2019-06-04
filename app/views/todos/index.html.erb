@@ -6,7 +6,7 @@
         <% if todo.completed == true %>
         <p>Task Completed</p>
         <% elsif todo.completed == false %>
-        <p>Not Completed yet</p>
+        <p>Task NOT completed yet</p>
         <%end%>
         <%= link_to 'Show', todo %>
         <%= link_to 'Edit', edit_todo_path(todo) %>
