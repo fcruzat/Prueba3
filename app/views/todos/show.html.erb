@@ -1,11 +1,20 @@
+<div class= 'col-mx-auto my-5 text-center'>
 <h1 class= text-center>YOUR TASK</h1>
-<%= @todo.description %>
-<% if @todo.completed == true %>
-    <p>Completed</p>
-<% else %>
-    <p>Task NOT completed yet</p>
-<% end %>
-
-<%= link_to 'Edit', edit_todo_path(@todo) %>
-<%= link_to "Delete", @todo, method: :delete, data: {confirm: 'Are you sure?'} %>
-<%= link_to "Back", todos_path %>
+<div class= 'jumbotron'>
+<h4><%= @todo.description %></h4>
+    <div class= 'font-weight-bold'>
+    <% if @todo.completed == true %>
+        <p class= 'text-success'>Completed!</p>
+    <% else %>
+        <p class= 'text-danger'>Task NOT completed yet</p>
+    <% end %>
+</div>
+</div>
+<div class = 'font-weight-bold text-center my-5'>
+    <%= link_to 'Edit |', edit_todo_path(@todo) %>
+    <%= link_to "Delete", @todo, method: :delete, data: {confirm: 'Are you sure?'} %>
+</div>
+<div class = 'font-weight-bold'>
+    <%= link_to "<< Back", todos_path %>
+</div>
+</div>

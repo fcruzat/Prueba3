@@ -1,20 +1,22 @@
-
-<h1 class= 'text-center'>TO DO LIST</h1>
+<div class= 'col-mx-auto my-5'>
+<h1 class= 'text-center font-weight-bold'>TO DO LIST</h1>
 <% @todos.each do|todo| %>
 <br>
     <div class= 'text-center card card-body bg-light'>
-        <%=todo.description%>
-        <br>
+        <p class = 'font-weight-bold'><%=todo.description%><p>
         <% if todo.completed == true%>
             <p class="card-text"><%= link_to "Mark as NOT Completed", complete_todo_path(todo), method: 'POST', class: "btn btn-danger" %></p>
         <% elsif todo.completed == false%>
             <p class="card-text"><%= link_to "Mark as Completed", complete_todo_path(todo), method: 'POST', class: "btn btn-success" %></p>
         <%end%>
         
-        <%= link_to 'Show', todo %>
-        <%= link_to 'Edit', edit_todo_path(todo) %>
+        <div class = 'font-weight-bold'>
+        <%= link_to 'Show', todo %> |
+        <%= link_to 'Edit', edit_todo_path(todo) %> |
         <%= link_to "Delete", todo, method: :delete, data: {confirm: 'Are you sure?'} %>
+        </div>
     </div>
 <%end%>
 
-<p class='text-center'><%= link_to 'Create new To Do', todos_new_path%></p>
+<p class='text-center font-weight-bold py-5'><%= link_to 'Create new To Do', todos_new_path%></p>
+</div>

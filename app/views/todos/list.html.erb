@@ -1,0 +1,29 @@
+<div class= 'col-mx-auto my-5'>
+<h2 class = "text-center font-weight-bold">To Dos</h2>
+<div class= 'row'>
+    
+    <div class = 'container col-md-6 my-5'>
+        <h2 class = "text-center font-weight-bold">Not Completed To Dos</h2>
+        <% @todos.each do|todo| %>
+        <% if todo.completed == false %>
+        <div class= ' text-center col-mx-auto my-3'>
+            <div class= 'card card-body bg-danger text-light'>
+                <%=todo.description%>
+            </div>
+        </div>
+        <%end%>
+        <%end%>
+    </div>
+    <div class = 'container col-md-6 my-5'>
+        <h2 class = "text-center font-weight-bold">Completed To Dos</h2>
+        <% @todos.each do|todo| %>
+            <% if todo.completed == true %>
+                <div class= ' text-center col-mx-auto my-3'>
+                    <div class= 'card card-body bg-success text-light'>
+                        <%=todo.description%>
+                    </div>
+                </div>
+            <%end%>
+        <%end%>
+    </div>
+</div>
