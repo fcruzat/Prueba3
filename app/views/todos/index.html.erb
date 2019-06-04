@@ -1,0 +1,7 @@
+<% @todos.each do|todo| %>
+<br>
+    <div class= 'text-center card card-body bg-light'>
+        <%=todo.description%>
+        <%=todo.completed%>
+    </div>
+<%end%>
