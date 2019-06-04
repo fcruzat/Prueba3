@@ -2,6 +2,9 @@
 <br>
     <div class= 'text-center card card-body bg-light'>
         <%=todo.description%>
+        <br>
         <%=todo.completed%>
     </div>
 <%end%>
+
+<p class='text-center'><%= link_to 'Create new To Do', todos_new_path%></p>
