@@ -1,6 +1,11 @@
+<h1 class= text-center>YOUR TASK</h1>
 <%= @todo.description %>
 <% if @todo.completed == true %>
     <p>Completed</p>
 <% else %>
     <p>Task NOT completed yet</p>
 <% end %>
+
+<%= link_to 'Edit', edit_todo_path(@todo) %>
+<%= link_to "Delete", @todo, method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= link_to "Back", todos_path %>

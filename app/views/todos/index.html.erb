@@ -1,3 +1,5 @@
+
+<h1 class= 'text-center'>TO DO LIST</h1>
 <% @todos.each do|todo| %>
 <br>
     <div class= 'text-center card card-body bg-light'>
@@ -10,6 +12,7 @@
         <%end%>
         <%= link_to 'Show', todo %>
         <%= link_to 'Edit', edit_todo_path(todo) %>
+        <%= link_to "Delete", todo, method: :delete, data: {confirm: 'Are you sure?'} %>
     </div>
 <%end%>
 
