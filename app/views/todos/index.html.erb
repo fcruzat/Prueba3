@@ -3,7 +3,12 @@
     <div class= 'text-center card card-body bg-light'>
         <%=todo.description%>
         <br>
-        <%=todo.completed%>
+        <% if todo.completed == true %>
+        <p>Task Completed</p>
+        <% elsif todo.completed == false %>
+        <p>Not Completed yet</p>
+        <%end%>
+        <%= link_to 'Show', todo %>
     </div>
 <%end%>
 
